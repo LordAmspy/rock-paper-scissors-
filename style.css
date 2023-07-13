@@ -1,0 +1,309 @@
+body {
+    background-image: url("./download.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    text-align: center;
+    margin: auto;
+  }
+
+  .input {
+    background-color: #383838;
+    border: 1ex solid none;
+    border-top-width: 1.7em;
+    margin: 0;
+    padding: 0;
+    color: #383838;
+    word-wrap: break-word;
+    outline: 7px solid #383838;
+    height: 30px;
+    font-size: 17px;
+    text-align: center;
+    transition: all 1s;
+    max-width: 190px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .input:hover {
+    border-top-width: 0.2em;
+    background-color: #f1e8e8;
+  }
+
+  .input:focus {
+    border-top-width: 0.2em;
+    background-color: #f1e8e8;
+  }
+
+  .welcome-message {
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .game-container {
+    display: none;
+  }
+
+  .game-result {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .radio-tile-group {
+    display: flex;
+    justify-content: center;
+  }
+
+  .radio-tile-group .input-container {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    margin: 0.5rem;
+  }
+
+  .radio-tile-group .input-container .radio-button {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .radio-tile-group .input-container .radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #079ad9;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: transform 300ms ease;
+  }
+
+  .radio-tile-group .input-container .icon svg {
+    fill: #079ad9;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .radio-tile-group .input-container .radio-tile-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #079ad9;
+  }
+
+  .radio-tile-group .input-container .radio-button:checked + .radio-tile {
+    background-color: #079ad9;
+    border: 2px solid #079ad9;
+    color: white;
+    transform: scale(1.1, 1.1);
+  }
+
+  .radio-tile-group
+    .input-container
+    .radio-button:checked
+    + .radio-tile
+    .icon
+    svg {
+    fill: white;
+    background-color: #079ad9;
+  }
+
+  .radio-tile-group
+    .input-container
+    .radio-button:checked
+    + .radio-tile
+    .radio-tile-label {
+    color: white;
+    background-color: #079ad9;
+  }
+
+  #playButton {
+    position: relative;
+    width: 11em;
+    height: 4em;
+    outline: none;
+    transition: 0.1s;
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ddebf0;
+    margin-top: 2em;
+  }
+
+  #clip {
+    --color: #2761c3;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px double var(--color);
+    box-shadow: inset 0px 0px 15px #195480;
+    -webkit-clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+  }
+
+  .arrow {
+    position: absolute;
+    transition: 0.2s;
+    background-color: #2761c3;
+    top: 35%;
+    width: 11%;
+    height: 30%;
+  }
+
+  #leftArrow {
+    left: -13.5%;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  }
+
+  #rightArrow {
+    -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+    left: 102%;
+  }
+
+  #playButton:hover #rightArrow {
+    background-color: #27c39f;
+    left: -15%;
+    animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+  }
+
+  #playButton:hover #leftArrow {
+    background-color: #27c39f;
+    left: 103%;
+    animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+  }
+
+  .corner {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #2761c3;
+    box-shadow: inset 1px 1px 8px #2781c3;
+    transform: scale(1) rotate(45deg);
+    transition: 0.2s;
+  }
+
+  #rightTop {
+    top: -1.98em;
+    left: 91%;
+  }
+
+  #leftTop {
+    top: -1.96em;
+    left: -3em;
+  }
+
+  #leftBottom {
+    top: 2.1em;
+    left: -2.15em;
+  }
+
+  #rightBottom {
+    top: 45%;
+    left: 88%;
+  }
+
+  #playButton:hover #leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
+      0.2s linear 0.4s both lightEffect8;
+  }
+
+  #playButton:hover #rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
+      0.2s linear 0.4s both lightEffect8;
+  }
+
+  #playButton:hover #rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
+      0.2s linear 0.4s both lightEffect8;
+  }
+
+  #playButton:hover #leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
+      0.2s linear 0.4s both lightEffect8;
+  }
+
+  #playButton:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+  }
+
+  #playButton:hover #clip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #27c39f;
+  }
+
+  @keyframes changeColor8 {
+    from {
+      background-color: #2781c3;
+    }
+
+    to {
+      background-color: #27c39f;
+    }
+  }
+
+  @keyframes lightEffect8 {
+    from {
+      box-shadow: 1px 1px 5px #27c39f;
+    }
+
+    to {
+      box-shadow: 0 0 2px #27c39f;
+    }
+  }
+
+  @keyframes greenLight8 {
+    from {
+    }
+
+    to {
+      box-shadow: inset 0px 0px 32px #27c39f;
+    }
+  }
+
+  @keyframes leftArrow8 {
+    from {
+      transform: translate(0px);
+    }
+
+    to {
+      transform: translateX(10px);
+    }
+  }
+
+  @keyframes rightArrow8 {
+    from {
+      transform: translate(0px);
+    }
+
+    to {
+      transform: translateX(-10px);
+    }
+  }

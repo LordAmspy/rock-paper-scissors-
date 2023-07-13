@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <form id="nameForm">
+        <input
+          type="text"
+          id="playerName"
+          class="input"
+          placeholder="Type your text"
+        />
+        <br /><br />
+        <button type="button" onclick="showWelcomeMessage()">Submit</button>
+      </form>
+      <p id="welcomeMessage" class="welcome-message"></p>
+      <div id="gameContainer" class="game-container">
+        <div class="radio-tile-group">
+          <div class="input-container">
+            <input
+              id="rock"
+              class="radio-button"
+              type="radio"
+              name="radio"
+              value="rock"
+            />
+            <div class="radio-tile">
+              <div class="icon rock-icon">
+                <svg
+                  fill="#000000"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                  ></path>
+                </svg>
+              </div>
+              <label for="rock" class="radio-tile-label">Rock</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input
+              id="paper"
+              class="radio-button"
+              type="radio"
+              name="radio"
+              value="paper"
+            />
+            <div class="radio-tile">
+              <div class="icon paper-icon">
+                <svg
+                  fill="#000000"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M20 6h-8l-4-4H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 16H4V4h8v6h6v10z"
+                  ></path>
+                </svg>
+              </div>
+              <label for="paper" class="radio-tile-label">Paper</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input
+              id="scissors"
+              class="radio-button"
+              type="radio"
+              name="radio"
+              value="scissors"
+            />
+            <div class="radio-tile">
+              <div class="icon scissors-icon">
+                <svg
+                  fill="#000000"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M6 2L2 6l8 8-8 8 4 4 8-8 8 8 4-4-8-8 8-8-4-4-8 8zm6 12c-1.63 0-3-1.46-3-3 0-.75.28-1.42.75-1.96l1.25 1.25C10.38 9.6 10 10.24 10 11c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1H9V8h2.02C12.28 8 13 7.28 13 6c0-1.63-1.46-3-3-3S7 4.37 7 6H5c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5zm0 2c2.76 0 5-2.24 5-5s-2.24-5-5-5S6 8.24 6 10c0 1.63 1.46 3 3 3z"
+                  ></path>
+                </svg>
+              </div>
+              <label for="scissors" class="radio-tile-label">Scissors</label>
+            </div>
+          </div>
+        </div>
+        <br />
+        <button id="playButton" onclick="playGame()">
+          P L A Y
+          <div id="clip">
+            <div id="leftTop" class="corner"></div>
+            <div id="rightBottom" class="corner"></div>
+            <div id="rightTop" class="corner"></div>
+            <div id="leftBottom" class="corner"></div>
+          </div>
+          <span id="rightArrow" class="arrow"></span>
+          <span id="leftArrow" class="arrow"></span>
+        </button>
+
+        <p id="gameResult" class="game-result"></p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
